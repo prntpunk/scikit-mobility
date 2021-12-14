@@ -112,7 +112,7 @@ def _compress_array(lat_lng_dtime_other, spatial_radius):
 
         Dr = measure_distance([lat_0,lon_0],[lat, lon])
 
-        if Dr > spatial_radius:
+        if Dr < spatial_radius:
 
             extra_cols = list(lat_lng_dtime_other[i_0][3:])
             compressed_traj += [[np.median(sum_lat), np.median(sum_lon), t_0] + extra_cols]
